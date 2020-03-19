@@ -108,8 +108,8 @@ fun View.fitStatusBar() {
  */
 fun View.fitStatusBarOverlay() {
     val params: MarginLayoutParams = layoutParams as MarginLayoutParams
-    params.topMargin = params.topMargin + getStatusBarHeight(context)
     params.height = params.height + getStatusBarHeight(context)
+    setPadding(paddingLeft, paddingTop + getStatusBarHeight(context), paddingRight, paddingBottom)
 }
 
 /**
