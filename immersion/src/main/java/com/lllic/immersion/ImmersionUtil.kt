@@ -35,12 +35,7 @@ fun Window.immersiveNavigationBar(alpha: Int = 0) {
  * @param window
  */
 private fun Window.setStatusBarTranslucent(alpha: Int = 0) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        colorStatusBar(Color.argb(alpha, 0, 0, 0))
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-
-    }
+    colorStatusBar(Color.argb(alpha, 0, 0, 0))
 }
 
 /**
@@ -59,7 +54,8 @@ fun Window.colorStatusBar(color: Int) {
             statusBarView = View(context)
             statusBarView.tag = "custom_status_bar_tag"
             val params: FrameLayout.LayoutParams = FrameLayout.LayoutParams(
-                    FrameLayout.LayoutParams.MATCH_PARENT, getStatusBarHeight(context))
+                FrameLayout.LayoutParams.MATCH_PARENT, getStatusBarHeight(context)
+            )
             params.gravity = Gravity.TOP
             statusBarView.layoutParams = params
             decorViewGroup.addView(statusBarView)
@@ -77,10 +73,12 @@ fun Window.overlayStatusBar(overlay: Boolean = true) {
         if (overlay) {
             decorView.setOnApplyWindowInsetsListener { v, insets ->
                 val defaultInsets = v.onApplyWindowInsets(insets)
-                return@setOnApplyWindowInsetsListener defaultInsets.replaceSystemWindowInsets(defaultInsets.systemWindowInsetLeft,
-                        0,
-                        defaultInsets.systemWindowInsetRight,
-                        defaultInsets.systemWindowInsetBottom)
+                return@setOnApplyWindowInsetsListener defaultInsets.replaceSystemWindowInsets(
+                    defaultInsets.systemWindowInsetLeft,
+                    0,
+                    defaultInsets.systemWindowInsetRight,
+                    defaultInsets.systemWindowInsetBottom
+                )
             }
         } else {
             decorView.setOnApplyWindowInsetsListener(null)
@@ -139,7 +137,12 @@ fun View.fitNavigationBar() {
     val offset = paddingBottom
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
         setOnApplyWindowInsetsListener { _, insets ->
-            setPadding(paddingLeft, paddingTop, paddingRight, offset + insets.systemWindowInsetBottom)
+            setPadding(
+                paddingLeft,
+                paddingTop,
+                paddingRight,
+                offset + insets.systemWindowInsetBottom
+            )
             return@setOnApplyWindowInsetsListener insets
         }
     }
