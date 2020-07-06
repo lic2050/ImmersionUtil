@@ -21,9 +21,9 @@ Step 2. Add the dependency
 
 1.  window.immersiveStatusBar()
     设置状态栏透明，并且将跟布局延申到状态栏上
-    
-2.  view.fitStatusBar() 
-    给view或toolbar添加状态栏高度的marginTop 
-    /
+
+2.  view.fitStatusBar()
+    给view或toolbar添加状态栏高度的marginTop
+
     view.fitStatusBarOverlay()
     给view(toolbar)同时添加状态栏高度的 height和paddingTop
