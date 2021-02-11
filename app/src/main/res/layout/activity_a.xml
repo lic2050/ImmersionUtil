@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0d9000"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvHeader"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/colorAccent"
-        android:text="222222222222222222222222"
+        android:text="2211111111111111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +28,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark" />
@@ -50,7 +49,6 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/et"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/colorAccent"

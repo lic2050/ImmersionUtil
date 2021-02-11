@@ -1,0 +1,5 @@
+<resources>
+
+    <item name="window_inset_manager_inset_top" type="id"/>
+    <item name="window_inset_manager_inset_bottom" type="id"/>
+</resources>
